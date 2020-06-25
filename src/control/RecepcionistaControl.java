@@ -18,30 +18,30 @@ public class RecepcionistaControl {
 
 	// tratamento manter cliente
 
-	public void novoCliente(long CPF, String nome, String email, String endereco, String telefone) {
+	public void novoCliente(String CPF, String nome, String email, String endereco, String telefone) {
 		Cliente c = new Cliente();
-		c.setID(idCli);
+		c.setId(idCli);
 		c.setCPF(CPF);
 		c.setNome(nome);
 		c.setEmail(email);
-		c.setEndereço(endereco);
+		c.setEndereco(endereco);
 		c.setTelefone(telefone);
 		idCli++;
 		clientes.add(c);
 	}
 
-	public void atualizarCliente(long CPF, String nome, String email, String telefone, String endereço) {
+	public void atualizarCliente(String CPF, String nome, String email, String telefone, String endereco) {
 		for (Cliente c : clientes) {
 			if (c.getCPF() == CPF) {
 				c.setNome(nome);
 				c.setEmail(email);
 				c.setTelefone(telefone);
-				c.setEndereço(endereço);
+				c.setEndereco(endereco);
 			}
 		}
 	}
 
-	public Cliente buscarCliente(long CPF) {
+	public Cliente buscarCliente(String CPF) {
 		int cont = 0;
 		for (Cliente c : clientes) {
 			if (c.getCPF() == CPF) {
@@ -50,7 +50,7 @@ public class RecepcionistaControl {
 			}
 		}
 		if (cont == 0) {
-			System.out.println("Cliente não cadastrado");
+			System.out.println("Cliente nï¿½o cadastrado");
 		}
 		return null;
 	}
@@ -61,7 +61,7 @@ public class RecepcionistaControl {
 		}
 	}
 
-	public void novoContrato(long CPF, long ID, LocalDate dataContrato, int qtdParcelas, double valorMes,
+	public void novoContrato(String CPF, long ID, LocalDate dataContrato, int qtdParcelas, double valorMes,
 			double valorTotal) {
 
 		try {
@@ -82,12 +82,12 @@ public class RecepcionistaControl {
 			ct.gerarCobranca(con);
 
 		} catch (Exception e) {
-			System.out.println("CPF não está cadastrado! Proceda com o cadastro do cliente e tente novamente");
+			System.out.println("CPF nï¿½o estï¿½ cadastrado! Proceda com o cadastro do cliente e tente novamente");
 		}
 
 	}
 
-	public void atualizarContrato(long CPF, int qtdParcelas, double valorMes, double valorTotal) {
+	public void atualizarContrato(String CPF, int qtdParcelas, double valorMes, double valorTotal) {
 
 		for (Contrato c : contratos) {
 			if (c.getCliente().getCPF() == CPF) {
@@ -99,7 +99,7 @@ public class RecepcionistaControl {
 
 	}
 
-	public Contrato buscarContrato(long CPF) {
+	public Contrato buscarContrato(String CPF) {
 		
 		int cont = 0;
 		for (Contrato c : contratos) {
@@ -109,7 +109,7 @@ public class RecepcionistaControl {
 			}
 		}
 		if(cont == 0) {
-			System.out.println("Contrato não localizado");
+			System.out.println("Contrato nï¿½o localizado");
 		}
 		return null;
 	}

@@ -2,18 +2,29 @@ package academia;
 
 public class Treinador {
 
-	long ID = 0;
-	String nome = "Treinador";
-	long CPF = 00000000000;
-	String telefone = "(11) 2222-2222";
-	String codigoAcesso = "acessar";
+	private long id;
+	private String nome;
+	private String CPF;
+	private String telefone;
+	private String codigoAcesso;
 
-	public long getID() {
-		return ID;
+	public Treinador() {
 	}
 
-	public void setID(long iD) {
-		ID = iD;
+	public Treinador(long id, String nome, String CPF, String telefone, String codigoAcesso) {
+		this.id = id;
+		this.nome = nome;
+		this.CPF = CPF;
+		this.telefone = telefone;
+		this.codigoAcesso = codigoAcesso;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long iD) {
+		id = iD;
 	}
 
 	public String getNome() {
@@ -24,11 +35,11 @@ public class Treinador {
 		this.nome = nome;
 	}
 
-	public long getCPF() {
+	public String getCPF() {
 		return CPF;
 	}
 
-	public void setCPF(long cPF) {
+	public void setCPF(String cPF) {
 		CPF = cPF;
 	}
 

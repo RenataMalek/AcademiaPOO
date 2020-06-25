@@ -2,26 +2,38 @@ package academia;
 
 public class Cliente {
 
-	long ID;
-	long CPF;
-	String nome;
-	String email;
-    String telefone;
-	String endereço;
+	private long id;
+	private String CPF;
+	private String nome;
+	private String email;
+	private String telefone;
+	private String endereco;
 
-	public long getID() {
-		return ID;
+	public Cliente() {
 	}
 
-	public void setID(long iD) {
-		ID = iD;
+	public Cliente(long id, String CPF, String nome, String email, String telefone, String endereco) {
+		this.id = id;
+		this.CPF = CPF;
+		this.nome = nome;
+		this.email = email;
+		this.telefone = telefone;
+		this.endereco = endereco;
 	}
 
-	public long getCPF() {
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long iD) {
+		id = iD;
+	}
+
+	public String getCPF() {
 		return CPF;
 	}
 
-	public void setCPF(long cPF) {
+	public void setCPF(String cPF) {
 		CPF = cPF;
 	}
 
@@ -49,12 +61,12 @@ public class Cliente {
 		this.telefone = telefone;
 	}
 
-	public String getEndereço() {
-		return endereço;
+	public String getEndereco() {
+		return endereco;
 	}
 
-	public void setEndereço(String endereço) {
-		this.endereço = endereço;
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 
 }

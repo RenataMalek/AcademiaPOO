@@ -4,7 +4,7 @@ import academia.Contrato;
 
 public class ClienteControl extends RecepcionistaControl {
 
-	public boolean entrarAcademia(long CPF) {
+	public boolean entrarAcademia(String CPF) {
 
 		Contrato c = buscarContrato(CPF);
 
